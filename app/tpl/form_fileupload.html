@@ -1,0 +1,50 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="FileUploadCtrl">
+  <!-- .col -->
+  <div class="col w-xxxl bg-light dk b-r bg-auto">
+    <div class="wrapper-sm bg b-b" style="position: relative;">
+      <div class="m-n inline" style="font-size: 1.8em">任务列表</div>
+      <a class="btn btn-info w-sm inline text-md" style="position: absolute;right: 8px;" ng-click="new_task()">新建任务</a>
+    </div>
+    <div class="wrapper-md">
+      <ul class="list-group list-group-sp">
+        <li class="list-group-item text-lg" ng-repeat="task in tasks">
+          <a ng-click="choose_task(task.id)">{{task.name}}</a>
+          <a style="position: absolute;right: 35%;" ng-click="choose_task(task.id)">{{task.time | date: 'yyyy/MM/dd HH:mm'}}</a>
+          <a>
+            <button class="btn btn-sm btn-danger pull-right" ui-toggle-class="timeline-center" ng-click="delete_task(task.id)">删除</button>
+          </a>
+          <a>
+            <button class="btn btn-sm btn-success pull-right m-r-sm" ui-toggle-class="timeline-center" ng-click="edit_task(task.id)">编辑</button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="wrapper-sm bg b-b" ng-show="is_editing || is_creating">
+      <a class="btn btn-success w-sm text-md" ng-click="update_task()">保存任务</a>
+    </div>
+    <div class="wrapper">
+      <div class="form-group col-sm-5" ng-show="is_editing || is_creating">
+        <label>任务名</label>
+        <input type="text" class="form-control" ng-model="item.name">
+      </div>
+      <div class="form-group col-sm-5" ng-show="is_creating">
+        <label>任务流程文件</label>
+        <input type="file" accept="text/xml, application/xml" file="myFile"/>
+      </div>
+
+    </div>
+    <div class="wrapper-md">
+      <div class="text-lg bg-light m-t-xxl" ng-show="is_creating || is_editing" style="text-align: center;">
+        <div>任务流程图</div>
+      </div>
+      <div>
+        <img ng-src="{{img_data}}" style="width: 100%" />
+      </div>
+    </div>
+
+    </div>
+  </div>
+  <!--</div>-->

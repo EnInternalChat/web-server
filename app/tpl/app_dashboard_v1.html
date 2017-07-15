@@ -1,0 +1,80 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false; 
+    app.settings.asideDock = false;
+  ">
+  <!-- main -->
+  <div class="col">
+    <!-- main header -->
+    <div class="bg-light lter b-b wrapper-md">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">主页</h1>
+          <small class="text-muted">欢迎回来</small>
+        </div>
+      </div>
+    </div>
+    <!-- / main header -->
+    <div class="wrapper-md" ng-controller="DashboardCtrl">
+      <!-- stats -->
+      <div class="row">
+
+      <div class="row">
+        <div class="col-md-6" ng-show="{{user.admin}}">
+          <div class="panel no-border">
+            <div class="panel-heading wrapper b-b b-light">
+              <span class="text-xs text-muted pull-right">
+                <i class="fa fa-circle text-primary m-r-xs"></i>{{tasks.length}}
+              </span>
+              <h4 class="font-thin m-t-none m-b-none text-muted">任务列表</h4>
+            </div>
+            <ul class="list-group list-group-lg m-b-none">
+              <li class="list-group-item text-md" ng-repeat="task in tasks | limitTo:5">
+                <a class="thumb-sm m-r"></a>
+                <span class="pull-right label bg-primary inline m-t-sm">{{task.time | date: 'yyyy/MM/dd'}}</span>
+                <a>{{task.name}}</a>
+              </li>
+            </ul>
+            <div class="panel-footer">
+              <a ui-sref="app.form.fileupload">
+              <button class="btn btn-primary btn-addon btn-sm"><i class="fa fa-plus"></i>添加任务</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="list-group list-group-lg list-group-sp">
+            <div class="panel no-border">
+            <div class="panel-heading wrapper b-b b-light">
+              <span class="text-xs text-muted pull-right">
+                <i class="fa fa-circle text-primary m-r-xs"></i>{{mails.length}}
+              </span>
+              <h4 class="font-thin m-t-none m-b-none text-muted">通知列表</h4>
+            </div>
+
+            <a herf class="list-group-item clearfix b-l-3x text-md" ng-repeat="mail in mails | limitTo:5" ng-class="{'b-l-info': mail.fold === 'read', 'b-l-warning': mail.fold === 'unread', 'b-l-success': mail.fold == 'send'}" ng-click="mail_detail(mail.ID)">
+              <div class="pull-right text-muted">
+                <span class="hidden-xs">{{ mail.sentTime | fromNow }}</span>
+              </div>
+              <span class="clear">
+                <span>{{mail.senderName}}</span>
+                <div class="text-muted clear text-ellipsis">{{mail.title}}</div>
+              </span>
+            </a>
+            <div class="panel-footer">
+              <a ui-sref="app.mail.compose">
+              <button class="btn btn-primary btn-addon btn-sm"><i class="fa fa-plus"></i>发布通知</button>
+              </a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- / tasks -->
+    </div>
+    </div>
+</div>
+  <!-- / main -->
+  <!-- right col -->
+
+  <!-- / right col -->
+</div>

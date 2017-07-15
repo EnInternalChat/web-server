@@ -1,0 +1,114 @@
+{
+  "mails":[
+    {
+      "id": 123,
+      "subject": "管理员",
+      "from": "张三",
+      "content":"有关周末加班安排",
+      "date":"2017-05-07T08:50+08:00",
+      "label":"财政部",
+      "fold":"发送",
+      "state":"unread"
+    },
+    {
+      "id": 9,
+      "subject": "程序部",
+      "from": "程序员AA",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"关于昨天下午提交的版本",
+      "date":"2017-06-07T08:50+09:00",
+      "label":"程序部",
+      "fold":"接收",
+      "state":""
+    },
+    {
+      "id": 8,
+      "subject": "市场部",
+      "from": "李四",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"下午3点会议室开会",
+      "attach":[
+        {"name":"c0.jpg", "url":"img/c0.jpg"}
+      ],
+      "date":"2017-06-11T08:50+10:00",
+      "label":"市场部",
+      "fold":"接收"
+    },
+    {
+      "id": 7,
+      "subject": "设计部",
+      "from": "王五",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"周六针对小组设计稿进行最后甄选",
+      "date":"2017-05-12T08:50+11:00",
+      "label":"设计部",
+      "fold":"接收"
+    },
+    {
+      "id": 6,
+      "subject": "业务部",
+      "from": "陈业",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"本周末加班",
+      "date":"2017-06-13T08:50+17:00",
+      "label":"业务部",
+      "fold":"接收"
+    },
+    {
+      "id": 5,
+      "subject": "客服部",
+      "from": "李明",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"技术支持部下午2点开会",
+      "date":"2017-06-11T08:50+08:00",
+      "label":"客服部",
+      "fold":"接收"
+    },
+    {
+      "id": 4,
+      "subject": "人力资源部",
+      "from": "任人",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"周六正常上班",
+      "date":"2017-06-12T08:50+08:00",
+      "label":"人力部",
+      "fold":"接收"
+    },
+    {
+      "id": 3,
+      "subject": "开发部",
+      "from": "李华",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"报告会延迟，时间之后通知",
+      "date":"2017-05-13T08:50+08:00",
+      "label":"开发部",
+      "fold":"接收"
+    },
+    {
+      "id": 2,
+      "subject": "开发部",
+      "from": "李华",
+      "to":[
+        {"name":"Mogen", "email":"mogen.abc@hotmail.com"}
+      ],
+      "content":"下午四点报告会",
+      "date":"2017-06-07T08:50+08:00",
+      "label":"开发部",
+      "fold":"接收"
+    }
+  ]
+}

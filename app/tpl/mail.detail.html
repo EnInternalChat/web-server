@@ -1,0 +1,18 @@
+<div ng-controller="MailDetailCtrl">
+  <!-- header -->
+  <div class="wrapper bg-light lter b-b">
+    <a ui-sref="app.mail.list" class="btn btn-sm btn-default w-xxs m-r-sm" tooltip="返回"><i class="fa fa-long-arrow-left"></i></a>
+    <div class="btn-group m-r-sm">
+      <button class="btn btn-sm btn-default w-xxs w-auto-xs" tooltip="删除"><i class="fa fa-trash-o" ng-click="delete_notice(mail.ID)"></i></button>
+    </div>
+  </div>
+  <!-- / header -->
+  <div class="wrapper b-b">
+    <h2 class="font-thin m-n">{{mail.title}}</h2>
+  </div>
+  <div class="wrapper b-b text-md">
+    from <a href>{{mail.senderName}}</a> on {{mail.sentTime | date: 'yyyy/MM/dd HH:mm'}}
+  </div>
+  <div class="wrapper" ng-bind-html="md_content">
+  </div>
+</div>

@@ -1,0 +1,169 @@
+{
+  "items":[
+    {
+      "group" : "程序部",
+      "first": "张三丰",
+      "last": "三加竖",
+      "company": "部员",
+      "mobile": "121 364 135",
+      "home": "程序部",
+      "work": "张三@mail.com",
+      "notes": "",
+      "avatar": "img/4.png"
+    },
+    {
+      "group" : "管理员",
+      "first": "张峰",
+      "last": "张三",
+      "company": "管理员",
+      "mobile": "121 364 135",
+      "home": "管理员",
+      "work": "张峰@mail.com",
+      "notes": "",
+      "avatar": "img/4.png"
+    },
+    {
+      "group" : "总经理",
+      "first": "肖奈",
+      "last": "一笑奈何",
+      "company": "总经理",
+      "mobile": "121 364 135",
+      "home": "总经理",
+      "work": "肖奈@mail.com",
+      "notes": "",
+      "avatar": "img/4.png"
+    },
+    {
+      "group" : "财务部",
+      "first": "王五",
+      "last": "王麻子",
+      "company": "部员",
+      "mobile": "102 394 821",
+      "home": "财务部",
+      "work": "王五@mail.com",
+      "notes": "",
+      "avatar": "img/1.png"
+    },
+    {
+       "group" : "财务部",
+      "first": "王二",
+      "last": "王大一",
+      "company": "部员.",
+      "mobile": "100 364 135",
+      "home": "财务部",
+      "work": "王二@mail.com",
+      "notes": "",
+      "avatar": "img/2.png"
+    },
+    {
+      "group" : "业务部",
+      "first": "李四",
+      "last": "",
+      "company": "部员",
+      "mobile": "324 123 123",
+      "home": "业务部",
+      "work": "李四@mail.com",
+      "notes": "",
+      "avatar": "img/3.png"
+    },
+    {
+      "group" : "开发部",
+      "first": "李华",
+      "last": "木子华",
+      "company": "部长",
+      "mobile": "765 434 565",
+      "home": "开发部",
+      "work": "李华@mail.com",
+      "notes": "",
+      "avatar": "img/5.png"
+    },
+    {
+      "group" : "开发部",
+      "first": "敖特曼",
+      "last": "奥特",
+      "company": "部员",
+      "mobile": "432 364 455",
+      "home": "开发部",
+      "work": "敖特曼@mail.com",
+      "notes": "",
+      "avatar": "img/5.png"
+    },
+    {
+      "group" : "市场部",
+      "first": "李浩",
+      "last": "李三不吿",
+      "company": "部员",
+      "mobile": "433 364 234",
+      "home": "市场部",
+      "work": "李浩@mail.com",
+      "notes": "",
+      "avatar": "img/7.png"
+    },
+    {
+      "group" : "程序部",
+      "first": "程序部AA",
+      "last": "不要BB",
+      "company": "部长",
+      "mobile": "332 431 223",
+      "home": "程序部",
+      "work": "程序员AA@mail.com",
+      "notes": "",
+      "avatar": "img/8.png"
+    },
+    {
+      "group" : "市场部",
+      "first": "李四",
+      "last": "三不远五",
+      "company": "部长",
+      "mobile": "543 453 890",
+      "home": "市场部",
+      "work": "李四@mail.com",
+      "notes": "",
+      "avatar": "img/6.png"
+    },
+    {
+      "group" : "业务部",
+      "first": "陈业",
+      "last": "耳洞耶",
+      "company": "部长",
+      "mobile": "656 565 789",
+      "home": "业务部",
+      "work": "陈业@mail.com",
+      "notes": "",
+      "avatar": "img/6.png"
+    },
+    {
+      "group" : "业务部",
+      "first": "泷雪",
+      "last": "念霜",
+      "company": "部员",
+      "mobile": "434 987 898",
+      "home": "业务部",
+      "work": "泷雪@mail.com",
+      "notes": "",
+      "avatar": "img/6.png"
+    },
+    {
+      "group" : "开发部",
+      "first": "于半珊",
+      "last": "愚公",
+      "company": "部员",
+      "mobile": "098 888 897",
+      "home": "开发部",
+      "work": "于半珊@mail.com",
+      "notes": "",
+      "avatar": "img/6.png"
+    },
+    {
+      "group" : "程序部",
+      "first": "郝眉",
+      "last": "莫扎他",
+      "company": "部员",
+      "mobile": "854 656 879",
+      "home": "程序部",
+      "work": "郝眉@mail.com",
+      "notes": "",
+      "avatar": "img/6.png"
+    }
+  ]
+}

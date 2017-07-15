@@ -1,0 +1,135 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="AbnTestController">
+  <div class="col w bg-light b-r bg-auto">
+    <div class="wrapper-sm">
+      <button ng-click="try_async_load()" class="btn btn-default btn-block">点击更新</button>
+      <div class="line b-b line-lg"></div>
+      <h5>快捷操作</h5>
+      <button ng-click="my_tree.select_first_branch()" class="btn btn-default">公司节点</button>
+      <div class="m-t-sm m-b-sm">
+        <button ng-click="my_tree.select_prev_sibling()" class="btn btn-default">上一个同级部门</button>
+      </div>
+      <div class="m-t-sm m-b-sm">
+        <button ng-click="my_tree.select_next_sibling()" class="btn btn-default">下一个同级部门</button>
+      </div>      
+      <div class="m-b-sm">
+        <button ng-click="my_tree.select_next_branch()" class="btn btn-default">子部门</button>
+        <button ng-click="my_tree.select_parent_branch()" class="btn btn-default">父部门</button>
+      </div>
+      <div class="m-t-sm m-b-sm">
+        <button ng-click="my_tree.expand_branch()" class="btn btn-default">展开</button>
+        <button ng-click="my_tree.collapse_branch()" class="btn btn-default">缩回</button>
+      </div>
+      <div class="m-t-sm m-b-sm">
+        <button ng-click="my_tree.expand_all()" class="btn btn-default">展开全部</button>
+        <button ng-click="my_tree.collapse_all()" class="btn btn-default">回缩全部</button>
+      </div>
+
+      <div style="margin-top: 32px;">
+        <form name="label">
+          <div class="input-group">
+            <input type="text" class="form-control input-sm" ng-model="new_name" placeholder="新部门" required>
+            <span class="input-group-btn">
+              <button class="btn btn-success btn-sm" type="button" ng-click="add_section()" ng-disabled="label.$invalid">添加部门</button>
+            </span>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<div class="col">
+  <div class="wrapper-md">
+    <div class="b-a bg-light dk r r-2x">
+      <span ng-if="doing_async">...loading...</span>
+      <abn-tree 
+      tree-data         = "my_data" 
+      tree-control      = "my_tree" 
+      on-select         = "my_tree_handler(branch)" 
+      expand-level      = "2" 
+      icon-leaf         = "fa fa-group"
+      icon-expand       = "fa fa-plus"
+      icon-collapse     = "fa fa-minus"
+      >
+    </abn-tree>
+  </div>
+</div>
+</div>
+<div class="col">
+    <div class="vbox">
+      <div class="wrapper-sm b-b" ng-hide="!item || item.is_root">
+        <div class="m-t-n-xxm m-b-n-xxm m-l-xm">
+          <a class="btn btn-xm btn-default pull-right" ng-click="delete_item(item)"><i class="fa fa-times"></i></a>
+          <a class="btn btn-xm btn-default" ng-hide="editing" ng-click="edit_item(item)">编辑</a>
+          <a class="btn btn-xm btn-default" ng-show="editing" ng-click="done_editing(item)">确定</a>
+        </div>
+      </div>
+      <div class="row-row">
+        <div class="cell">
+          <div class="cell-inner">
+            <div class="wrapper-lg">
+              <div class="hbox h-auto m-b-lg">
+                <div class="col v-middle h1 font-thin" style="text-align: center;">
+                  <div ng-hide="editing">{{item.name}}</div>
+                  <input type="text" placeholder="必填" class="form-control" ng-show="editing" ng-model="item.name" style="height: 48px;width: 50%;font-size: 2.0rem;display: inline-block;text-align: center;">
+                </div>
+              </div>
+              <!-- fields -->
+              <div class="form-horizontal" style="font-size: 1.7rem;">
+                <div class="form-group m-b-sm" ng-hide="!item || item.is_root || editing">
+                  <label class="col-sm-3 control-label">部长</label>
+                  <div class="col-sm-9">
+                    <div class="form-control-static">{{item.leader.name}}</div>
+                  </div>
+                </div>
+                <div class="form-group" ng-hide="!item || item.is_root || !editing">
+                  <label class="col-sm-3 control-label">部长</label>
+                  <div class="col-sm-9">
+                    <ui-select ng-model="item.leader">
+                      <ui-select-match placeholder="选择部长">
+                        <span ng-bind="$select.selected.name"></span>
+                      </ui-select-match>
+                      <ui-select-choices repeat="option in item.members">
+                        <span ng-bind="option.name"></span>
+                      </ui-select-choices>
+                    </ui-select>
+                  </div>
+                </div>
+                <div class="form-group m-b-sm" ng-hide="!item || item.is_root">
+                  <label class="col-sm-3 control-label">成员人数</label>
+                  <div class="col-sm-9">
+                    <p class="form-control-static">{{item.membersID.length}}</p>
+                  </div>
+                </div>
+                <div class="form-group m-b-sm" ng-hide="!item || item.is_root">
+                  <label class="col-sm-3 control-label">子部门数</label>
+                  <div class="col-sm-9">
+                    <p class="form-control-static">{{item.children.length}}</p>
+                  </div>
+                </div>
+                <div class="form-group m-b-sm" ng-hide="(!item && !editing) || item.is_root">
+                  <label class="col-sm-3 control-label">描述</label>
+                  <div class="col-sm-9">
+                    <p class="form-control-static" ng-hide="editing">{{item.note}}</p>
+                    <input type="text" placeholder="必填" class="form-control" ng-show="editing" ng-model="item.note">
+                  </div>
+                </div>
+                <div class="form-group m-b-sm" ng-show="item.is_root">
+                  <label class="col-sm-3 control-label">公司介绍</label>
+                  <div class="col-sm-9">
+                    <p class="form-control-static" ng-hide="editing">{{item.introduction}}</p>
+                </div>              
+              </div>
+              <div class="form-group m-b-sm" ng-show="item.is_root">
+                <label class="col-sm-3 control-label">公司人数</label>
+                <div class="col-sm-9">
+                  <p class="form-control-static" ng-hide="editing">{{item.members_count}}</p>
+                </div>              
+              </div>
+              <div class="input-group-btn" ng-hide="!item || item.is_root" style="text-align: center;padding: 16px 0px 0px 16px;">
+                <button class="btn btn-success btn-lg" type="button" ng-click="section_detail(item)">查看部门详情</button>
+              </div>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

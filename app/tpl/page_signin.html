@@ -1,0 +1,25 @@
+<div class="container w-xxl w-auto-xs" ng-controller="SigninFormController" ng-init="app.settings.container = false;">
+  <a href class="navbar-brand block m-t"></a>
+  <div class="m-b-lg">
+    <div class="wrapper text-center m-b-xl">
+      <div class="signin-head">
+        <img src="img/{{avatar}}.png" alt="" class="img-circle" style="display: inline-block;">
+      </div>
+    </div>
+    <form name="form" class="form-validation">
+      <div class="text-danger wrapper text-center" ng-show="authError">
+          {{authError}}
+      </div>
+      <div class="list-group list-group-sm">
+        <div class="list-group-item">
+          <input type="text" placeholder="用户名" class="form-control no-border" ng-model="user.username" required>
+        </div>
+        <div class="list-group-item">
+           <input type="password" placeholder="密码" class="form-control no-border" ng-model="user.password" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="login(user.username, user.password, true)" ng-disabled='form.$invalid'>登录</button>
+    </form>
+  </div>
+  <div class="text-center" ng-include="'tpl/blocks/page_footer.html'"></div>
+</div>

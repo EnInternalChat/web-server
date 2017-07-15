@@ -1,0 +1,43 @@
+<!-- list -->
+<ul class="nav">
+
+  <li ui-sref-active="active">
+    <a ui-sref="app.mail.list">
+      <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
+      <span>通知管理</span>
+    </a>
+  </li>
+
+
+  <li ui-sref-active="active" ng-show="{{user.admin}}">
+    <a ui-sref="apps.contact">
+      <i class="glyphicon glyphicon-th-large icon text-success"></i>
+      <span>用户管理</span>
+    </a>
+  </li>
+
+  <li ui-sref-active="active" ng-show="{{user.admin}}">
+    <a ui-sref="app.ui.tree">
+      <i class="glyphicon glyphicon-briefcase icon"></i>
+      <span>部门结构</span>
+    </a>
+  </li>
+
+  <li ui-sref-active="active" ng-show="{{user.admin}}">
+    <a ui-sref="app.form.fileupload">
+      <i class="glyphicon glyphicon-signal"></i>
+      <span>任务管理</span>
+    </a>
+  </li>
+
+
+  <li ui-sref-active="active">
+    <a ui-sref="app.form.validation">
+      <i class="icon-user icon text-success-lter"></i>
+      <span>个人设置</span>
+    </a>
+  </li>
+
+
+</ul>
+<!-- / list -->
